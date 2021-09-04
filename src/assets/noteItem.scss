@@ -1,0 +1,35 @@
+.note-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #33322e;
+  border-radius: 6px;
+  padding: 15px;
+  box-shadow: 1px 1px 0 #33322e;
+  background: #f4d799;
+
+  &__title {
+    margin-right: 30px;
+    padding: 6px;
+    width: 100%;
+    min-height: 32px;
+    font-size: 18px;
+  }
+
+  &__button {
+    height: 24px;
+
+    p {
+      margin-top: -8px;
+      padding: 4px;
+      font-size: 24px;
+    }
+  }
+
+  &__title,
+  &__button {
+    border: 1px solid #33322e;
+    border-radius: 4px;
+    box-shadow: 1px 1px 0 #33322e;
+  }
+}

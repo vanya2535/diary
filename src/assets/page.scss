@@ -1,0 +1,7 @@
+.main {
+  margin: 10px 4%;
+
+  &__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
