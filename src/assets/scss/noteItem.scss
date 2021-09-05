@@ -1,0 +1,30 @@
+@import "./colors.scss";
+@import "./mixin.scss";
+
+.note-item {
+  &__main {
+    @include border;
+    @include item;
+
+    background: $note-background;
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__button {
+    @include button-size;
+
+    p {
+      @include button-paragraph;
+    }
+  }
+
+  &__title,
+  &__button {
+    @include border;
+
+    border-radius: 4px;
+  }
+}

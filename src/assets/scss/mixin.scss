@@ -1,0 +1,39 @@
+@import "./colors.scss";
+
+@mixin border {
+  border: 1px solid $text-color;
+  border-radius: 6px;
+  box-shadow: 1px 1px 0 $text-color;
+}
+
+@mixin item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px;
+}
+
+@mixin title {
+  margin-right: 30px;
+  padding: 6px;
+  width: 100%;
+  min-height: 32px;
+  font-size: 18px;
+}
+
+@mixin button-size {
+  width: 24px;
+  height: 24px;
+}
+
+@mixin button-paragraph {
+  margin-top: -8px;
+  padding: 4px;
+  font-size: 24px;
+}
+
+@mixin todo-size {
+  margin: 0 auto;
+  padding: 4px;
+  width: 97%;
+}

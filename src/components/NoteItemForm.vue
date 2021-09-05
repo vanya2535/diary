@@ -1,9 +1,11 @@
 <template>
   <div class="note-item">
-    <my-input class="note-item__title" v-model="title" />
-    <button class="note-item__button" @click="onClick">
-      <p>✓</p>
-    </button>
+    <main class="note-item__main">
+      <my-input class="note-item__title" v-model="title" />
+      <button class="note-item__button" @click="onClick">
+        <p>✓</p>
+      </button>
+    </main>
   </div>
 </template>
 
@@ -29,5 +31,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/noteItem.scss";
+@import "../assets/scss/noteItem.scss";
 </style>

@@ -27,7 +27,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "./assets/scss/colors.scss";
+
 .app {
   font-family: "Noto Sans JP", sans-serif;
   word-break: break-all;
@@ -107,7 +109,7 @@ text {
   font-weight: 700;
   font-size: inherit;
   line-height: 1em;
-  color: #33322e;
+  color: $text-color;
 }
 
 p {

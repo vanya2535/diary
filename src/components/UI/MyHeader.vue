@@ -1,8 +1,11 @@
 <template>
   <header class="header">
-    <h1 class="header__title" @click="$router.push({ name: 'main' })">
-      {{ title }}
-    </h1>
+    <div class="header__main-content">
+      <img src="../../assets/logo.svg" alt="" class="header__logo" width="24" />
+      <h1 class="header__title" @click="$router.push({ name: 'main' })">
+        {{ title }}
+      </h1>
+    </div>
     <button class="header__button" @click="$emit('buttonClick')">+</button>
   </header>
 </template>
@@ -20,15 +23,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../assets/scss/colors.scss";
+
 .header {
   display: flex;
   align-items: center;
-  border-bottom: 3px solid #33322e;
+  border-bottom: 3px solid $text-color;
   width: 100%;
   min-height: 56px;
-  background: #b0e3ff;
+  background: $header-background;
 
-  &__title {
+  &__main-content {
+    display: flex;
     margin-right: 30px;
     margin-left: 4%;
     font-size: 24px;

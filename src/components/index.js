@@ -3,6 +3,7 @@ import MyInput from "./UI/MyInput.vue";
 import NoteItem from "./NoteItem.vue";
 import NoteItemForm from "./NoteItemForm";
 import TodoItem from "./TodoItem.vue";
+import TodoList from "./TodoList.vue";
 import TodoItemForm from "./TodoItemForm";
 
 export default [
@@ -11,5 +12,6 @@ export default [
   NoteItem,
   NoteItemForm,
   TodoItem,
+  TodoList,
   TodoItemForm,
 ];

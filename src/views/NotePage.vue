@@ -54,7 +54,7 @@ export default {
   },
   mounted() {
     this.noteItemCopy = this.noteItem;
-    document.body.style.backgroundColor = "#f4d799";
+    document.body.style.backgroundColor = "$note-background";
   },
   watch: {
     noteItemCopy: {
@@ -68,5 +68,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/page.scss";
+@import "../assets/scss/page.scss";
 </style>

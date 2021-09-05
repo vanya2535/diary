@@ -1,0 +1,45 @@
+@import "./colors.scss";
+@import "./mixin.scss";
+
+.todo-item {
+  @include border;
+  @include item;
+
+  background: $todo-background;
+
+  &_completed {
+    background: linear-gradient(90deg, rgba(249, 243, 229, 1) 0%, rgba(176, 227, 255, 1) 100%);
+  }
+
+  &__checkbox {
+    margin-right: 30px;
+    border-radius: 50% !important;
+    height: 24px;
+    min-width: 24px;
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__button {
+    @include button-size;
+
+    p {
+      @include button-paragraph;
+    }
+  }
+
+  &_completed &__title,
+  &_completed &__checkbox {
+    background: rgba(176, 227, 255, 1);
+  }
+
+  &__checkbox,
+  &__title,
+  &__button {
+    @include border;
+
+    border-radius: 4px;
+  }
+}
