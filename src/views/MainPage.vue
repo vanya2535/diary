@@ -13,6 +13,9 @@
         <note-item-form v-show="isFormVisible" @confirm="onConfirm" />
       </div>
     </main>
+    <footer class="footer">
+      <my-timetable />
+    </footer>
   </div>
 </template>
 

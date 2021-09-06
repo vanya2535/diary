@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import { timetable } from "./timetable.js";
 
 export default createStore({
   state: () => ({
@@ -36,5 +37,8 @@ export default createStore({
     uploadNotes({ state }) {
       localStorage.noteList = JSON.stringify(state.noteList);
     },
+  },
+  modules: {
+    timetable: timetable,
   },
 });

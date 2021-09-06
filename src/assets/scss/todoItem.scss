@@ -6,7 +6,6 @@
     @include item;
 
     padding: 0 5px;
-    background: $todo-background;
   }
 
   &__checkbox {
@@ -30,7 +29,7 @@
 
   &__footer {
     @include border;
-    @include todo-size;
+    @include sub-item-size;
 
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -41,6 +40,11 @@
     font-size: 10px;
     text-align: center;
     color: $prompt-color;
+  }
+
+  &__main,
+  &__footer {
+    background: $todo-background;
   }
 
   &__main,

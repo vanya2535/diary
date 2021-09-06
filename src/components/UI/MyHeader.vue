@@ -1,12 +1,17 @@
 <template>
-  <header class="header">
-    <div class="header__main-content">
-      <img src="../../assets/logo.svg" alt="" class="header__logo" width="24" />
-      <h1 class="header__title" @click="$router.push({ name: 'main' })">
+  <header class="my-header">
+    <div class="my-header__main-content">
+      <img
+        class="my-header__logo"
+        src="../../assets/logo.svg"
+        alt=""
+        width="24"
+      />
+      <h1 class="my-header__title" @click="$router.push({ name: 'main' })">
         {{ title }}
       </h1>
     </div>
-    <button class="header__button" @click="$emit('buttonClick')">
+    <button class="my-header__button" @click="$emit('buttonClick')">
       <p>+</p>
     </button>
   </header>
@@ -28,7 +33,7 @@ export default {
 @import "../../assets/scss/mixin.scss";
 @import "../../assets/scss/colors.scss";
 
-.header {
+.my-header {
   display: flex;
   align-items: center;
   border-bottom: 3px solid $text-color;

@@ -32,7 +32,7 @@ export default {
 
 .app {
   font-family: "Noto Sans JP", sans-serif;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 * {

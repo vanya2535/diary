@@ -28,7 +28,7 @@ export default {
 
 .todo-list {
   @include border;
-  @include todo-size;
+  @include sub-item-size;
 
   border-bottom: none;
   border-radius: 0;
