@@ -6,7 +6,9 @@
         {{ title }}
       </h1>
     </div>
-    <button class="header__button" @click="$emit('buttonClick')">+</button>
+    <button class="header__button" @click="$emit('buttonClick')">
+      <p>+</p>
+    </button>
   </header>
 </template>
 
@@ -23,6 +25,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../assets/scss/mixin.scss";
 @import "../../assets/scss/colors.scss";
 
 .header {
@@ -45,6 +48,12 @@ export default {
     margin-left: auto;
     border: none;
     font-size: 48px;
+
+    p {
+      @include button-paragraph;
+
+      font-size: 48px;
+    }
   }
 
   &__title,

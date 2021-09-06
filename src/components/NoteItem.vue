@@ -44,25 +44,4 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/scss/noteItem.scss";
-
-.note-item {
-  &__footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__footer-button {
-    @include border;
-    @include todo-size;
-
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    height: 20px;
-    font-size: 10px;
-    text-align: center;
-    color: $prompt-color;
-    background: $note-background;
-  }
-}
 </style>

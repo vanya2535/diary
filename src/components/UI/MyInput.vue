@@ -2,9 +2,9 @@
   <textarea
     class="my-textarea"
     :value="modelValue"
-    @input="updateInput"
-    ref="myInput"
+    :ref="`myInput${id}`"
     :style="inputStyle"
+    @input="updateInput"
   >
   </textarea>
 </template>
@@ -18,11 +18,12 @@ export default {
   data() {
     return {
       inputHeight: 0,
+      id: Date.now(),
     };
   },
   methods: {
     resize() {
-      this.inputHeight = `${this.$refs.myInput.scrollHeight}px`;
+      this.inputHeight = `${this.$refs[`myInput${this.id}`].scrollHeight}px`;
     },
     updateInput(event) {
       this.$emit("update:modelValue", event.target.value);

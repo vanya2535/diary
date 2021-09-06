@@ -2,44 +2,63 @@
 @import "./mixin.scss";
 
 .todo-item {
-  @include border;
-  @include item;
+  &__main {
+    @include item;
 
-  background: $todo-background;
-
-  &_completed {
-    background: linear-gradient(90deg, rgba(249, 243, 229, 1) 0%, rgba(176, 227, 255, 1) 100%);
+    padding: 0 5px;
+    background: $todo-background;
   }
 
   &__checkbox {
-    margin-right: 30px;
+    margin-right: 10px;
     border-radius: 50% !important;
-    height: 24px;
-    min-width: 24px;
   }
 
   &__title {
     @include title;
+
+    margin-right: 10px;
   }
 
   &__button {
-    @include button-size;
+    border-radius: 4px;
 
     p {
       @include button-paragraph;
     }
   }
 
-  &_completed &__title,
-  &_completed &__checkbox {
-    background: rgba(176, 227, 255, 1);
+  &__footer {
+    @include border;
+    @include todo-size;
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  &__deadline {
+    min-height: 10px !important;
+    font-size: 10px;
+    text-align: center;
+    color: $prompt-color;
+  }
+
+  &__main,
+  &__checkbox,
+  &__button {
+    @include border;
   }
 
   &__checkbox,
-  &__title,
   &__button {
-    @include border;
+    @include button-size;
+  }
 
-    border-radius: 4px;
+  &_completed &__main {
+    background: linear-gradient(90deg, $todo-background 0%, $header-background 100%);
+  }
+
+  &_completed &__checkbox {
+    background: $header-background;
   }
 }
