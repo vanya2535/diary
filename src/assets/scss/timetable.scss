@@ -1,0 +1,42 @@
+@import "@/assets/scss/mixin.scss";
+@import "@/assets/scss/colors.scss";
+
+.timetable {
+  &__item {
+    @include border;
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+  &__info {
+    border-right: 1px solid $text-color;
+    min-width: 50px;
+    font-size: 14px;
+    text-align: end;
+  }
+
+  &__time {
+    padding: 2px 4px;
+    width: 100%;
+  }
+
+  &__type {
+    border-top: 1px solid $text-color;
+    padding: 0 4px 4px 0;
+    width: 100%;
+  }
+
+  &__name {
+    padding: 2px 4px;
+    width: 100%;
+  }
+
+  &__cabinet {
+    border-left: 1px solid $text-color;
+    padding: 2px;
+    width: 50px;
+    font-size: 14px;
+  }
+}

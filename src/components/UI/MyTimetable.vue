@@ -4,55 +4,56 @@
     v-if="isTimetableVisible"
     @click.stop="isTimetableVisible = false"
   />
-  <div class="my-timetable" :style="timetableStyle" ref="timetable" @click.stop>
+  <div class="timetable" :style="timetableStyle" ref="timetable" @click.stop>
     <button
-      class="my-timetable__button"
+      class="timetable__button"
       @click="isTimetableVisible = !isTimetableVisible"
     >
       <p v-if="!isTimetableVisible" key="timetableShowButton">Show timetable</p>
       <p v-else key="timetableHideButton">Hide timetable</p>
     </button>
-    <div class="my-timetable__content" ref="timetableContent">
+    <div
+      class="timetable__content"
+      v-if="getCurrentTimetable"
+      ref="timetableContent"
+    >
       <div
-        class="my-timetable__item"
-        v-for="timetableItem in timetable"
+        class="timetable__item"
+        v-for="timetableItem in getCurrentTimetable"
         :key="timetableItem.id"
       >
-        <div class="my-timetable__info">
-          <div class="my-timetable__time">
+        <div class="timetable__info">
+          <div class="timetable__time">
             <p>{{ timetableItem.time[0] }}</p>
             <p>{{ timetableItem.time[1] }}</p>
           </div>
-          <p class="my-timetable__type">{{ timetableItem.type }}</p>
+          <p class="timetable__type">{{ timetableItem.type }}</p>
         </div>
-        <h1 class="my-timetable__name">{{ timetableItem.name }}</h1>
-        <h1 class="my-timetable__cabinet">{{ timetableItem.cabinet }}</h1>
+        <h1 class="timetable__name">{{ timetableItem.name }}</h1>
+        <h1 class="timetable__cabinet">{{ timetableItem.cabinet }}</h1>
       </div>
+      <button
+        class="timetable__page-button"
+        @click="$router.push({ name: 'timetable' })"
+      >
+        See full timetable
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 export default {
   name: "MyTimetable",
   data() {
     return {
       isTimetableVisible: false,
-      week:
-        Math.floor(
-          (Math.round(new Date().getMonth() * 30.4167) + new Date().getDate()) /
-            7
-        ) % 2,
       timetableStyle: { top: "calc(100% - 25px)" },
     };
   },
   computed: {
-    ...mapState(["timetable"]),
     ...mapGetters(["getCurrentTimetable"]),
-    timetable() {
-      return this.getCurrentTimetable(this.week);
-    },
   },
   watch: {
     isTimetableVisible() {
@@ -88,9 +89,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "../../assets/scss/mixin.scss";
-@import "../../assets/scss/colors.scss";
+<style lang="scss" scoped>
+@import "@/assets/scss/mixin.scss";
+@import "@/assets/scss/colors.scss";
+@import "@/assets/scss/timetable.scss";
 
 .wrap {
   position: fixed;
@@ -102,7 +104,7 @@ export default {
   background: rgba(0, 0, 0, 0.9);
 }
 
-.my-timetable {
+.timetable {
   position: fixed;
   z-index: 3;
   width: 100%;
@@ -126,42 +128,10 @@ export default {
     background: $todo-background;
   }
 
-  &__item {
+  &__page-button {
     @include border;
 
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 6px;
-  }
-
-  &__info {
-    border-right: 1px solid $text-color;
-    min-width: 50px;
-    font-size: 14px;
-    text-align: end;
-  }
-
-  &__time {
-    padding: 2px 4px;
     width: 100%;
-  }
-
-  &__type {
-    border-top: 1px solid $text-color;
-    padding: 0 4px 4px 0;
-    width: 100%;
-  }
-
-  &__name {
-    padding: 2px 4px;
-    width: 100%;
-  }
-
-  &__cabinet {
-    border-left: 1px solid $text-color;
-    padding: 2px;
-    width: 50px;
-    font-size: 14px;
   }
 }
 </style>

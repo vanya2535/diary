@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-import MainPage from "../views/MainPage.vue";
-import NotePage from "../views/NotePage.vue";
+import MainPage from "@/views/MainPage.vue";
+import NotePage from "@/views/NotePage.vue";
+import TimetablePage from "@/views/TimetablePage.vue";
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     name: "note",
     path: "/note/:id",
     component: NotePage,
+  },
+  {
+    name: "timetable",
+    path: "/timetable/",
+    component: TimetablePage,
   },
 ];
 

@@ -1,12 +1,7 @@
 <template>
   <header class="my-header">
     <div class="my-header__main-content">
-      <img
-        class="my-header__logo"
-        src="../../assets/logo.svg"
-        alt=""
-        width="24"
-      />
+      <img class="my-header__logo" src="@/assets/logo.svg" alt="" width="24" />
       <h1 class="my-header__title" @click="$router.push({ name: 'main' })">
         {{ title }}
       </h1>
@@ -30,8 +25,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/mixin.scss";
-@import "../../assets/scss/colors.scss";
+@import "@/assets/scss/mixin.scss";
+@import "@/assets/scss/colors.scss";
 
 .my-header {
   display: flex;

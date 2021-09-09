@@ -35,5 +35,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/scss/todoItem.scss";
+@import "@/assets/scss/todoItem.scss";
 </style>

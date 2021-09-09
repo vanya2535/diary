@@ -243,8 +243,21 @@ export const timetable = {
     ],
   }),
   getters: {
-    getCurrentTimetable: (state) => (week) => {
-      return state.timetable[week][new Date().getDay() - 1];
+    getCurrentTimetable: (state) => {
+      const date = new Date();
+      return state.timetable[
+        Math.floor(
+          (Math.round(date.getMonth() * 30.4167 + date.getDate()) - 3) / 7
+        ) % 2
+      ][date.getDay() - 1];
+    },
+    getTimetable: (state) => {
+      const date = new Date();
+      return state.timetable[
+        Math.floor(
+          (Math.round(date.getMonth() * 30.4167 + date.getDate()) - 3) / 7
+        ) % 2
+      ];
     },
   },
 };
